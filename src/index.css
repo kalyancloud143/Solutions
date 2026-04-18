@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Geometric Balance Palette */
+  --color-growth: #00E676;
+  --color-growth-muted: rgba(0, 230, 118, 0.1);
+  --color-premium: #800000;
+  --color-premium-dark: #450a0a;
+  --color-warning: #FFEA00;
+  --color-fintech-bg: #0A0D10;
+  --color-fintech-card: rgba(25, 30, 36, 0.8);
+  --color-fintech-line: rgba(255, 255, 255, 0.1);
+  --color-text-dim: #94A3B8;
+  --color-glass: rgba(255, 255, 255, 0.03);
+}
+
+@layer base {
+  body {
+    @apply bg-fintech-bg text-white font-sans antialiased min-h-screen;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(0, 230, 118, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(128, 0, 0, 0.05) 0%, transparent 40%);
+  }
+}
+
+.glass-card {
+  @apply bg-fintech-card backdrop-blur-[10px] border border-fintech-line rounded-2xl;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.strategy-card {
+  @apply bg-glass border border-fintech-line rounded-xl;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.strategy-card:hover {
+  @apply border-growth/30 bg-white/[0.05];
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  @apply bg-growth text-black font-bold px-6 py-3 rounded-md transition-all hover:brightness-110 active:scale-95 text-sm;
+}
+
+.btn-whatsapp {
+  @apply bg-[#25D366] text-white font-bold px-6 py-3 rounded-md transition-all hover:brightness-110 active:scale-95 text-sm;
+}
+
+.btn-outline {
+  @apply border border-fintech-line bg-transparent text-white font-bold px-6 py-3 rounded-md transition-all hover:bg-white/5 active:scale-95 text-sm;
+}
+
+.sebi-banner {
+  @apply bg-warning text-black px-2.5 py-1 text-[10px] font-black rounded uppercase inline-block mb-4;
+}
+
+.neon-green {
+  text-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
+}
+
+.text-dim {
+  @apply text-text-dim;
+}
